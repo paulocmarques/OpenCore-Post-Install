@@ -65,6 +65,10 @@ module.exports = {
                     text: 'OpenCore Install Guide',
                     link: 'https://dortania.github.io/OpenCore-Install-Guide/'
                 },
+	            {
+	                text: 'OpenCore Multiboot',
+	                link: 'https://dortania.github.io/OpenCore-Multiboot/'
+	            },
                 {
                     text: 'Getting Started With ACPI',
                     link: 'https://dortania.github.io/Getting-Started-With-ACPI/'
@@ -150,6 +154,7 @@ module.exports = {
                             ['/universal/security/filevault', 'FileVault'],
                             ['/universal/security/vault', 'Vault'],
                             ['/universal/security/scanpolicy', 'ScanPolicy'],
+							['/universal/security/password', 'OpenCore Menu Password'],
                             ['/universal/security/applesecureboot', 'Apple Secure Boot'],
                         ]
                     },
@@ -176,6 +181,7 @@ module.exports = {
                 title: 'Multiboot',
                 collapsable: false,
                 children: [
+					['https://dortania.github.io/OpenCore-Multiboot/', 'OpenCore Multiboot'],
                     ['/multiboot/bootstrap', 'Setting up LauncherOption'],
                     ['/multiboot/bootcamp', 'Installing BootCamp'],
                 ]

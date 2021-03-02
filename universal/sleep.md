@@ -44,14 +44,16 @@ sudo pmset autopoweroff 0
 sudo pmset powernap 0
 sudo pmset standby 0
 sudo pmset proximitywake 0
+sudo pmset tcpkeepalive 0
 ```
 
-This will do 4 things for us:
+This will do 5 things for us:
 
 1. Disables autopoweroff: This is a form of hibernation
 2. Disables powernap: Used to periodically wake the machine for network, and updates(but not the display)
 3. Disables standby: Used as a time period between sleep and going into hibernation
 4. Disables wake from iPhone/Watch: Specifically when your iPhone or Apple Watch come near, the machine will wake
+5. Disables TCP Keep Alive mechanism to prevent wake ups every 2 hours
 
 **In your config.plist**:
 
@@ -96,6 +98,8 @@ This guide also includes some other fixes than just mapping:
 * [Keyboard Wake Issues](../usb/misc/keyboard.md)
 
 **USB maps with macOS Catalina(10.15) and newer**: You may find that even with USB mapping, your sleep breaks. one possible solution is renaming the IOClass value from `AppleUSBMergeNub` to `AppleUSBHostMergeProperties`. See here for more info: [Changes in Catalina's USB IOClass](https://github.com/dortania/bugtracker/issues/15)
+
+* Note: Some USB devices that do not have proper drivers in macOS can unfortunately result in sleep issues. For example, Corsair water coolers with USB addressable control can prevent the machine from sleeping correctly. For these situations, we recommend users disconnect these troublesome devices when debugging sleep issues.
 
 ### Fixing GPUs
 
